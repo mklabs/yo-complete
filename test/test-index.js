@@ -52,8 +52,6 @@ describe('Simple test', () => {
   describe('tabtab.install()', () => {
     afterEach(async () => {
       const tabtabCommands = new tabtab.Commands({
-        // todo: in tabtab, make it so that we can uninstall even without --auto
-        auto: true,
         name: 'yo',
         completer: 'yo-complete'
       });
