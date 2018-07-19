@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Yo (yeoman) completion",
   "main": "index.js",
+  "bin": "bin/yo-complete",
   "scripts": {
     "test": "mocha"
   },
@@ -19,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/mklabs/yo-complete/issues"
   },
-  "homepage": "https://github.com/mklabs/yo-complete#readme"
+  "homepage": "https://github.com/mklabs/yo-complete#readme",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "tabtab": "github:mklabs/tabtab#update"
+  }
 }
