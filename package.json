@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Yo (yeoman) completion",
   "main": "index.js",
-  "bin": "bin/yo-complete",
+  "bin": "bin/yo-completer",
   "scripts": {
     "test": "nyc mocha -r babel-core/register -r babel-polyfill --timeout 5000",
     "mocha": "mocha -r babel-core/register -r babel-polyfill --timeout 5000",

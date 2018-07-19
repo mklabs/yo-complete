@@ -12,7 +12,7 @@ const { promisify } = require('es6-promisify');
 const read          = promisify(require('fs').readFile);
 
 // Path to cli to test against inquirer-test
-const cliPath       = path.join(__dirname, '../bin/yo-complete');
+const cliPath       = path.join(__dirname, '../bin/yo-completer');
 
 // inquirer-test needs a little bit more time, or yo-complete
 const TIMEOUT = 1000;
@@ -43,7 +43,7 @@ describe('Simple test', () => {
     assert.equal(yoComplete(options), require('../package.json').version);
   });
 
-  it('Triggers tabtab install on `yo-complete completion (output)`', async () => {
+  it('Triggers tabtab install on `yo-completer completion (output)`', async () => {
     const result = await run([cliPath, 'completion'], [ENTER], TIMEOUT);
     assert.ok(/\-begin\-yo\-completion/.test(result));
     return Promise.resolve();
@@ -61,7 +61,7 @@ describe('Simple test', () => {
       return tabtabCommands.uninstall();
     });
 
-    it('Triggers tabtab install on `yo-complete completion (~/.bashrc)`', async () => {
+    it('Triggers tabtab install on `yo-completer completion (~/.bashrc)`', async () => {
       const result = await run([cliPath, 'completion'], [DOWN, ENTER], TIMEOUT);
       const bashrc = await read(untildify('~/.bashrc'), 'utf8');
 
