@@ -1,6 +1,7 @@
 # yo-complete
 
 [![Build Status](https://travis-ci.org/mklabs/yo-complete.svg?branch=master)](https://travis-ci.org/mklabs/yo-complete)
+[![Coverage Status](https://coveralls.io/repos/github/mklabs/yo-complete/badge.svg?branch=master)](https://coveralls.io/github/mklabs/yo-complete?branch=master)
 
 This package is a work in progress package to add completion for Yeoman as a
 separate repository.
