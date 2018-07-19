@@ -5,8 +5,8 @@
   "main": "index.js",
   "bin": "bin/yo-complete",
   "scripts": {
-    "test": "nyc mocha",
-    "mocha": "mocha",
+    "test": "nyc mocha -r babel-core/register -r babel-polyfill",
+    "mocha": "mocha -r babel-core/register -r babel-polyfill",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
@@ -24,7 +24,11 @@
   },
   "homepage": "https://github.com/mklabs/yo-complete#readme",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "coveralls": "^3.0.2",
+    "inquirer-test": "^2.0.1",
     "mocha": "^5.2.0",
     "nyc": "^12.0.2"
   },

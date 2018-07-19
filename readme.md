@@ -38,6 +38,8 @@ To see debugging statements, you'll need to run this instead:
 
     DEBUG='yo-complete*' ./node_modules/.bin/mocha
 
+*Note: babel is used only in tests to support async/await syntax along with [inquirer-test](https://github.com/ewnd9/inquirer-test)*
+
 ## Linking
 
     npm link
