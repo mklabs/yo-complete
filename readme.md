@@ -5,7 +5,7 @@ separate repository.
 
 ## Installation
 
-        npm install --save mklabs/yo-complete#master
+        npm install --save mklabs/yo-complete#master --global
 
 Then, you'll need to run
 
