@@ -1,24 +1,31 @@
 const yoComplete = require('..');
 const assert     = require('assert');
-const opts = require('140-opts')(process.argv.slice(2));
+const opts = require('140-opts');
 
 describe('Simple test', () => {
-  it('Returns the name of the package', () => {
-    assert.equal(yoComplete(), 'yo-complete');
-  });
-
-  it('Returns completion stuff', () => {
-    const opts = { _: ['completion'] };
-    assert.equal(yoComplete(opts), 'do completion, trigger tabtab.install() here');
-  });
-
   it('Returns help output', () => {
-    const opts = { _: ['--help'], help: true };
-    assert.equal(yoComplete(opts), yoComplete.help);
+    const options = { _: ['--help'], help: true };
+    assert.equal(yoComplete(options), yoComplete.help);
+
+    const parsed = opts(['--help']);
+    assert.equal(yoComplete(parsed), yoComplete.help);
   });
 
   it('Returns help output even with completion arguments', () => {
-    const opts = { _: ['completion', '--help'], help: true };
-    assert.equal(yoComplete(opts), yoComplete.help);
+    const options = { _: ['completion', '--help'], help: true };
+    assert.equal(yoComplete(options), yoComplete.help);
+
+    const parsed = opts(['completion', '--help']);
+    assert.equal(yoComplete(parsed), yoComplete.help);
   });
+
+  it('Returns version on --version', () => {
+    const options = opts(['--version']);
+    assert.equal(yoComplete(options), require('../package.json').version);
+
+    const optsWithCompletion = opts(['completion', '--version']);
+    assert.equal(yoComplete(options), require('../package.json').version);
+  });
+
+  it('depends');
 });
