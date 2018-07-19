@@ -1,5 +1,5 @@
 {
-  "name": "yo-complete",
+  "name": "yo-completer",
   "version": "1.0.0",
   "description": "Yo (yeoman) completion",
   "main": "index.js",

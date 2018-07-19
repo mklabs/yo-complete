@@ -40,6 +40,12 @@ To see debugging statements, you'll need to run this instead:
 
 *Note: babel is used only in tests to support async/await syntax along with [inquirer-test](https://github.com/ewnd9/inquirer-test)*
 
+## Completion Tests
+
+Once setup (in `~/.bashrc` or similar), make sure to reload your shell.
+
+You can use `export TABTAB_DEBUG="/tmp/tabtab.log"` and `tail -f /tmp/tabtab.log` to see debugging output.
+
 ## Linking
 
     npm link

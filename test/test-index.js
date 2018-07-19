@@ -53,7 +53,7 @@ describe('Simple test', () => {
     afterEach(async () => {
       const tabtabCommands = new tabtab.Commands({
         name: 'yo',
-        completer: 'yo-complete'
+        completer: 'yo-completer'
       });
 
       return tabtabCommands.uninstall();
