@@ -10,11 +10,11 @@ It'll help in figuring out the best way to integrate with Yeoman.
 
 ## Installation
 
-        npm install --save mklabs/yo-complete#master --global
+    npm install --save mklabs/yo-complete#master --global
 
 Then, you'll need to run
 
-        yo-complete completion
+    yo-complete completion
 
 It'll ask for your approval to add the necessary lines to either `~/.bashrc`,
 `~/.zshrc` or `~/.config/fish/config`
@@ -23,3 +23,24 @@ It'll ask for your approval to add the necessary lines to either `~/.bashrc`,
 
 This is a work in progress package, and will remain on github (no npm publish).
 It serve as a playground to develop the `3.0.0` version of tabtab.
+
+## Tests
+
+With the repo cloned, run the following:
+
+    npm install
+    npm test
+
+    # without nyc
+    npm run mocha
+
+To see debugging statements, you'll need to run this instead:
+
+    DEBUG='yo-complete*' ./node_modules/.bin/mocha
+
+## Linking
+
+    npm link
+
+To add the `yo-complete` binary available system-wide. Debugging statements are
+enabled by default unless there is already a `DEBUG` environment variable.

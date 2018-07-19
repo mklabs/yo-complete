@@ -1,4 +1,10 @@
 #!/usr/bin/env node
-
 process.env.DEBUG = process.env.DEBUG || 'yo-complete*';
-require('../lib/cli');
+
+const debug = require('debug')('yo-complete:bin');
+
+// Process arguments and flags
+const opts = require('140-opts')(process.argv.slice(2));
+
+debug('opts', opts);
+require('../lib/cli')(opts);
