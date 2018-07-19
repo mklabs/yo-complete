@@ -4,6 +4,8 @@ const opts          = require('140-opts');
 const run           = require('inquirer-test');
 const path          = require('path');
 const fs            = require('fs');
+const untildify     = require('untildify');
+const tabtab        = require('tabtab');
 // const { promisify } = require('util');
 // for node 6
 const { promisify } = require('es6-promisify');
@@ -41,9 +43,30 @@ describe('Simple test', () => {
     assert.equal(yoComplete(options), require('../package.json').version);
   });
 
-  it('Triggers tabtab install on `yo-complete completion async`', async () => {
+  it('Triggers tabtab install on `yo-complete completion (output)`', async () => {
     const result = await run([cliPath, 'completion'], [ENTER], TIMEOUT);
     assert.ok(/\-begin\-yo\-completion/.test(result));
     return Promise.resolve();
+  });
+
+  describe('tabtab.install()', () => {
+    afterEach(async () => {
+      const tabtabCommands = new tabtab.Commands({
+        // todo: in tabtab, make it so that we can uninstall even without --auto
+        auto: true,
+        name: 'yo',
+        completer: 'yo-complete'
+      });
+
+      return tabtabCommands.uninstall();
+    });
+
+    it('Triggers tabtab install on `yo-complete completion (~/.bashrc)`', async () => {
+      const result = await run([cliPath, 'completion'], [DOWN, ENTER], TIMEOUT);
+      const bashrc = await read(untildify('~/.bashrc'), 'utf8');
+
+      assert.ok(/tabtab\ssource\sfor\syo\spackage/.test(bashrc));
+      return Promise.resolve();
+    });
   });
 });
