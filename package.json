@@ -1,0 +1,23 @@
+{
+  "name": "yo-complete",
+  "version": "1.0.0",
+  "description": "Yo (yeoman) completion",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mklabs/yo-complete.git"
+  },
+  "keywords": [
+    "yo",
+    "completion"
+  ],
+  "author": "Mickael Daniel <mklabs>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mklabs/yo-complete/issues"
+  },
+  "homepage": "https://github.com/mklabs/yo-complete#readme"
+}
