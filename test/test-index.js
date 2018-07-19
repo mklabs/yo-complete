@@ -4,7 +4,9 @@ const opts          = require('140-opts');
 const run           = require('inquirer-test');
 const path          = require('path');
 const fs            = require('fs');
-const { promisify } = require('util');
+// const { promisify } = require('util');
+// for node 6
+const { promisify } = require('es6-promisify');
 const read          = promisify(require('fs').readFile);
 
 // Path to cli to test against inquirer-test
